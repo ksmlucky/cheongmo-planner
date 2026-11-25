@@ -1,0 +1,6 @@
+{
+  "name": "cheongmo-planner",
+  "private": true,
+  "type": "module",
+  "scripts": { "start": "node preview.mjs", "test": "node tests/logic.test.mjs" }
+}

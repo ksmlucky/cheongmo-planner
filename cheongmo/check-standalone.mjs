@@ -1,0 +1,10 @@
+import {readFile} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const html=await readFile(new URL('../청모.html',import.meta.url),'utf8');
+const script=html.match(/<script type="module">([\s\S]*?)<\/script>/)?.[1];
+assert.ok(script,'Bundled application script is present');
+assert.ok(!/^import /m.test(script),'Bundled code does not fetch external modules');
+assert.ok(!/@import\s+url/.test(html),'Standalone file does not fetch external fonts');
+assert.ok(!/<script[^>]*\ssrc=/.test(html),'No external script dependencies');
+new Function(script);
+console.log('Standalone HTML: syntax and offline dependency checks passed.');

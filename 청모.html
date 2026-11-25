@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#284d43">
+  <meta name="description" content="소중한 사람들, 편안한 조합. 서로 아는 사이를 연결해 청첩장 모임을 준비하는 나만의 플래너.">
+  <title>청모 — 다정한 모임의 시작</title>
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTkiIGZpbGw9IiMyODRkNDMiLz48cGF0aCBkPSJNMTQgMjJoMzZ2MjZIMTR6IiBmaWxsPSIjZjdlY2RjIi8+PHBhdGggZD0ibTE0IDIyIDE4IDE1IDE4LTE1IiBmaWxsPSJub25lIiBzdHJva2U9IiMyODRkNDMiIHN0cm9rZS13aWR0aD0iMyIvPjxwYXRoIGQ9Ik0zMiAyNmMtMTItNy00LTE2IDAtOSA1LTcgMTMgMiAwIDkiIGZpbGw9IiNkZjkxNmQiLz48L3N2Zz4K" type="image/svg+xml">
+  <style>
+:root{--ink:#263e36;--muted:#79827c;--green:#2c5548;--green-soft:#eaf0e9;--cream:#f8f7f3;--line:#e6e8e1;--peach:#e49b7c;--paper:#fff;--danger:#ac5148;font-family:'Noto Sans KR',-apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif;color:var(--ink);background:var(--cream);font-synthesis:none;font-size:14px}
+*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button{color:inherit}button:disabled{cursor:not-allowed;opacity:.45}button:focus-visible,a:focus-visible{outline:3px solid #bd8c55;outline-offset:4px}input:focus,select:focus,textarea:focus{outline:2px solid #799888;outline-offset:1px}button svg{flex-shrink:0}svg{vertical-align:middle}a{color:inherit}.skip{position:fixed;left:10px;top:-100px;z-index:90;padding:12px;background:white}.skip:focus{top:10px}.layout{display:flex;min-height:100vh}.sidebar{width:228px;position:fixed;inset:0 auto 0 0;background:#294d42;color:#f4f3e9;display:flex;flex-direction:column;padding:38px 21px 25px;z-index:10}.brand{display:flex;gap:12px;align-items:center;padding:0 15px}.brand-mark{width:38px;height:38px;background:#f3ecdd;border-radius:12px;display:grid;place-items:center;color:var(--green)}.brand-name{font-family:'Noto Serif KR',serif;font-size:29px;line-height:1.2;font-weight:600;letter-spacing:-2px}.brand small{display:block;letter-spacing:2px;font-size:8px;margin-top:7px;color:#c2d0c5}.nav-label{font-size:10px;letter-spacing:2px;color:#91aa9b;margin:55px 17px 13px}.nav{display:grid;gap:8px}.nav button{display:flex;align-items:center;gap:12px;border:0;border-radius:9px;padding:14px 17px;text-align:left;background:none;color:#bed0c5;font-size:13px;font-weight:500}.nav button:hover{background:#35594e}.nav button.active{background:#edf1e7;color:#294d42}.nav button span:last-child:not(:first-child){margin-left:auto;font-size:11px;opacity:.75}.sidebar-note{margin-top:auto;padding:28px 15px 25px}.sidebar-note svg{color:#dca584}.sidebar-note p{font-family:'Noto Serif KR',serif;font-size:15px;line-height:1.9;color:#e5e9dd}.sidebar-note small{font-size:11px;color:#adc1b4;line-height:1.8}.sidebar-bottom{border-top:1px solid #476456;padding-top:21px}.sidebar-bottom button{display:flex;align-items:center;gap:10px;border:0;background:none;color:#cfdbd0;padding:8px 15px;font-size:12px}.main-wrap{margin-left:228px;width:calc(100% - 228px)}.topbar{height:84px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 46px;background:#fbfaf7}.breadcrumb{display:flex;align-items:center;gap:12px;font-size:12px;color:#8a928c}.breadcrumb strong{color:#5c6b61;font-weight:500}.top-actions{display:flex;align-items:center;gap:18px}.private{display:flex;align-items:center;gap:6px;color:#7c897f;font-size:11px}.host-avatar{height:31px;width:31px;border-radius:50%;display:grid;place-items:center;background:#e9ecdf;font-size:11px;font-weight:600}.content{max-width:1410px;margin:0 auto;padding:35px 46px 50px}.demo-banner{border:1px solid #e9e1cf;background:#f4f0e5;color:#7b7157;padding:11px 16px;border-radius:8px;display:flex;align-items:center;gap:9px;font-size:11px;margin-bottom:30px}.demo-banner .text-btn{margin-left:auto;flex-shrink:0;color:#6d644d;font-size:11px}.storage-error{background:#fae5df;padding:12px;border-radius:8px;line-height:1.7;margin-bottom:16px;font-size:12px}.eyebrow{font-size:10px;font-weight:600;letter-spacing:2px;color:#89968a;margin:0 0 11px}.page-head{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:29px}.page-head h1{font-family:'Noto Serif KR',serif;font-size:32px;font-weight:500;line-height:1.55;letter-spacing:-1.6px;margin:0}.page-head h1 em{font-style:normal;color:#759080}.page-head p.description{color:var(--muted);font-size:12px;line-height:1.8;margin:10px 0 0}.head-art{width:142px;height:115px;position:relative;margin-right:32px;transform:rotate(-8deg)}.envelope{position:absolute;width:99px;height:69px;border:1px solid #ddcdb9;border-radius:4px;background:#efe4d4;left:18px;top:37px;overflow:hidden}.envelope:before{content:'';position:absolute;left:14px;top:-40px;width:70px;height:70px;border:1px solid #ddcdb9;background:#f7f0e5;transform:rotate(45deg)}.envelope:after{content:'♡';position:absolute;left:38px;top:24px;font-size:25px;line-height:1;color:#bd795e}.letter{position:absolute;width:77px;height:65px;left:29px;top:9px;border:1px solid #e3d7c3;background:#fffdf7;border-radius:3px;transform:rotate(6deg);text-align:center;padding-top:10px;color:#9caa93;font-size:9px;letter-spacing:1px}.letter:after{content:'';width:31px;height:1px;background:#e0ddcf;position:absolute;top:40px;left:22px;box-shadow:0 6px 0 #e0ddcf}.art-spark{position:absolute;right:0;top:15px;color:#c7aa77;font-size:22px}.stats{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);background:var(--paper);border-radius:12px;margin-bottom:28px;padding:22px 0}.stat{display:flex;align-items:center;gap:15px;padding:0 26px;border-right:1px solid var(--line)}.stat:last-child{border-right:0}.stat-icon{width:40px;height:40px;display:grid;place-items:center;border-radius:12px;background:#f1f3eb;color:#7a917e}.stat:nth-child(2) .stat-icon{background:#faf0e7;color:#c2946f}.stat:nth-child(3) .stat-icon{background:#f0eff6;color:#9891b2}.stat small{font-size:11px;color:var(--muted);display:block;margin-bottom:3px}.stat b{font-size:23px;font-weight:500;letter-spacing:-1px}.stat b span{font-size:11px;color:#92998e;font-weight:400;letter-spacing:0;margin-left:5px}.builder-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(310px,.87fr);gap:24px;align-items:start}.card{background:#fff;border:1px solid var(--line);border-radius:13px;overflow:hidden}.card-pad{padding:25px}.section-title{display:flex;align-items:center;gap:9px;margin-bottom:7px}.section-title h2{font-size:15px;letter-spacing:-.4px;margin:0;font-weight:600}.step{width:22px;height:22px;border-radius:7px;background:#edf1e8;color:#69806a;display:grid;place-items:center;font-size:10px}.helper{font-size:11px;line-height:1.8;color:var(--muted);margin:0}.field-row{display:grid;grid-template-columns:1fr 142px;gap:12px;margin:23px 0 14px}.field{display:grid;gap:7px;min-width:0}.field label,.field-label{font-size:11px;color:#69786e;font-weight:500}.field input,.field select,.field textarea,.search-input,.filter-select{width:100%;border:1px solid #e0e5dc;border-radius:7px;background:#fff;color:var(--ink);padding:11px 12px;font-size:12px;min-height:41px}.field textarea{resize:vertical;min-height:75px}.field select,.filter-select{padding-right:20px}.check-row{display:flex;align-items:center;gap:7px;font-size:10px;color:#859084;line-height:1.6}.check-row input{accent-color:var(--green);width:13px;height:13px;margin:0}.options{display:flex;gap:14px;flex-wrap:wrap;margin:13px 0 20px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:7px;font-size:12px;font-weight:500;padding:11px 17px;min-height:41px;transition:background .15s,transform .15s;border:1px solid transparent;text-decoration:none}.btn:hover:not(:disabled){transform:translateY(-1px)}.btn.primary{background:var(--green);color:#fff}.btn.primary:hover{background:#214436}.btn.secondary{background:white;border-color:#dbe1d7;color:#536d5c}.btn.soft{background:#f0f3ec;color:#59735d}.btn.danger{background:#a94e43;color:#fff}.btn.full{width:100%}.btn.small{padding:8px 12px;min-height:34px;font-size:11px}.text-btn{border:0;background:none;padding:2px 0;display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#73836f;text-decoration:none}.text-btn:hover{text-decoration:underline}.divider{border:0;border-top:1px solid var(--line);margin:24px 0}.candidate-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}.candidate-heading h3{font-size:12px;font-weight:600;margin:0}.candidate-heading small{font-size:10px;color:#8a9488}.candidates{display:grid;gap:8px}.person-pick{width:100%;text-align:left;display:flex;align-items:center;gap:11px;background:white;border:1px solid #e8ebe3;border-radius:9px;padding:12px;position:relative}.person-pick:hover:not(:disabled){border-color:#aabca6;background:#fafcf8}.person-pick.selected{border-color:#a6bba0;background:#f5f8f1}.person-pick:disabled{opacity:.57}.avatar{height:35px;width:35px;border-radius:50%;display:inline-grid;place-items:center;flex-shrink:0;font-size:11px;font-weight:500;background:var(--avatar-bg,#f0e6db);color:var(--avatar-fg,#9c7860)}.pick-copy{flex:1;min-width:0}.pick-name{font-size:12px;font-weight:600;display:flex;align-items:center;gap:7px}.pick-copy small{display:block;font-size:10px;color:#85917e;line-height:1.7;margin-top:3px}.selection-check{width:18px;height:18px;border:1px solid #dce3d6;border-radius:50%;display:grid;place-items:center;color:#b4beae;flex-shrink:0}.selected .selection-check{background:#718969;border-color:#718969;color:#fff}.tag{font-size:9px;padding:3px 7px;line-height:1.3;border-radius:4px;display:inline-flex;background:#f0f1eb;color:#89907a;font-weight:400;white-space:nowrap}.tag.warm{background:#f7ecdf;color:#b1885f}.tag.green{background:#eaf1e7;color:#6b8563}.tag.red{background:#faeae6;color:#ae685b}.more{margin-top:13px;width:100%;justify-content:center}.preview-card{background:#f2f4ec;border-color:#e1e6d8}.preview-header{padding:23px 24px 0;display:flex;justify-content:space-between;align-items:center}.preview-header .eyebrow{font-size:9px;margin:0;letter-spacing:1.5px;color:#8c9b7f}.live-dot{width:5px;height:5px;background:#92a879;border-radius:50%;display:inline-block;margin-right:5px}.preview-count{font-size:10px;color:#7b8d6d}.preview-title{font-family:'Noto Serif KR',serif;font-size:21px;font-weight:500;text-align:center;margin:20px 12px 0;letter-spacing:-.8px}.preview-subtitle{text-align:center;font-size:10px;color:#8b967f;margin:8px 15px 0;line-height:1.8}.network{position:relative;aspect-ratio:1.5;max-width:390px;margin:12px auto 4px;width:100%}.network svg.links{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.network .guest-node{position:absolute;transform:translate(-50%,-50%);text-align:center;z-index:1}.guest-node .avatar{width:44px;height:44px;font-size:14px;border:4px solid #f2f4ec}.guest-node b{display:block;font-size:10px;line-height:1.5;font-weight:500;margin-top:1px;max-width:72px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.guest-node small{font-size:8px;color:#96a48b}.network-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:67px;height:67px;border-radius:50%;background:#fffdf7;border:1px solid #dce2ce;display:grid;place-content:center;text-align:center;color:#8d9d79;box-shadow:0 0 0 8px #edf0e4}.network-center span{font-size:8px;letter-spacing:1px;margin-top:4px}.network-empty{font-size:12px;color:#92a187;text-align:center;position:absolute;top:40%;left:10%;width:80%;line-height:2}.connection-note{display:flex;align-items:center;justify-content:center;gap:6px;font-size:10px;color:#7c906c;margin:5px 20px 20px}.connection-note span{width:16px;height:1px;background:#a9b897}.preview-bottom{background:rgba(255,255,255,.62);padding:20px 24px 24px;border-top:1px solid #e0e6d6}.summary-line{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:500}.summary-line svg{color:#92a47b}.summary-detail{font-size:10px;color:#8c9681;line-height:1.9;margin:8px 0 19px}.warning{padding:11px 12px;background:#fbede3;color:#a27753;border-radius:7px;font-size:11px;line-height:1.8;margin:12px 0}.help-card{margin-top:16px;border:1px solid #e8e5dc;border-radius:10px;padding:19px 21px;display:flex;align-items:flex-start;gap:12px}.help-card>svg{color:#b5a280;margin-top:2px;flex-shrink:0}.help-card h3{margin:0 0 6px;font-size:11px;font-weight:500}.help-card p{margin:0;font-size:10px;color:#9b9c8e;line-height:1.9}.footer-note{font-size:10px;color:#a1a89c;text-align:center;margin:29px 0 0;line-height:1.8}.toolbar{display:flex;gap:10px;margin-bottom:20px;align-items:center}.search-wrap{position:relative;flex:1}.search-wrap>svg{position:absolute;left:12px;top:13px;color:#9ba697}.search-input{padding-left:37px;background:#fff}.filter-select{width:auto;max-width:180px}.people-list{display:grid;gap:10px}.person-row{padding:19px 22px;display:grid;grid-template-columns:minmax(140px,.8fr) minmax(120px,1fr) minmax(140px,1fr) 85px 32px;align-items:center;gap:16px;border:1px solid var(--line);border-radius:10px;background:#fff}.person-main{display:flex;align-items:center;gap:12px}.person-main strong{font-size:13px;font-weight:600}.person-main small{display:block;color:#9aa28f;font-size:10px;margin-top:5px}.tags{display:flex;flex-wrap:wrap;gap:5px}.person-note{font-size:11px;color:#8c9787;line-height:1.8}.icon-btn{border:0;background:transparent;padding:6px;border-radius:5px;color:#93a08b;display:inline-grid;place-items:center}.icon-btn:hover{background:#edf0e7}.empty{padding:55px 25px;text-align:center;border:1px dashed #d9e1d1;border-radius:12px}.empty>svg{color:#9aaf8b;margin-bottom:14px;width:34px;height:34px}.empty h2{font-family:'Noto Serif KR',serif;font-size:21px;font-weight:500}.empty p{color:var(--muted);font-size:12px;line-height:1.9;margin-bottom:22px}.meeting-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.meeting-card{padding:24px}.meeting-top{display:flex;justify-content:space-between;align-items:center}.meeting-card h2{font-size:18px;letter-spacing:-.6px;margin:18px 0 8px;font-weight:500}.meeting-meta{font-size:11px;color:#8c9785;display:flex;gap:7px;align-items:center;line-height:1.8;margin:8px 0}.meeting-members{display:flex;flex-wrap:wrap;gap:6px;padding:18px 0;margin:10px 0;border-top:1px solid #edf0e7;border-bottom:1px solid #edf0e7}.member-chip{background:#f4f6f0;padding:5px 9px;border-radius:6px;font-size:10px}.meeting-actions{display:flex;justify-content:space-between;gap:8px}.meeting-done{opacity:.72}.meeting-filter{display:flex;gap:6px;margin-bottom:22px}.meeting-filter button{border:1px solid transparent;background:transparent;padding:8px 14px;border-radius:20px;color:#86927e;font-size:11px}.meeting-filter button.active{background:#e7eddf;color:#5c7853}.count-muted{font-size:11px;color:#96a08f}.page-head.compact h1{font-size:29px}.data-row{padding:18px 0;display:flex;align-items:center;justify-content:space-between;gap:15px;border-bottom:1px solid var(--line)}.data-row:last-child{border-bottom:0}.data-row h3{font-size:13px;margin:0 0 6px}.data-row p{font-size:11px;color:var(--muted);line-height:1.8;margin:0}.data-row .btn{flex-shrink:0}dialog{border:1px solid #dce2d5;border-radius:15px;max-width:580px;width:calc(100% - 36px);padding:0;color:var(--ink);max-height:88vh;box-shadow:0 25px 100px #152a2733;background:#fffdf9}dialog::backdrop{background:#20392d66;backdrop-filter:blur(3px)}.modal-head{display:flex;align-items:center;justify-content:space-between;padding:23px 26px;border-bottom:1px solid var(--line)}.modal-head h2{font-size:18px;margin:0;letter-spacing:-.7px;font-weight:500}.modal-body{padding:23px 26px}.modal-body>.helper{margin-bottom:21px}.modal-fields{display:grid;gap:17px}.modal-actions{display:flex;align-items:center;justify-content:flex-end;gap:8px;padding:20px 26px;border-top:1px solid var(--line);background:#f7f8f1}.modal-actions .left{margin-right:auto}.form-error{color:var(--danger);font-size:12px;line-height:1.8;margin:12px 0}.relationship-list{max-height:210px;overflow-y:auto;border:1px solid var(--line);border-radius:8px;padding:0 12px;margin-top:9px}.relationship-row{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid #edf0e7}.relationship-row:last-child{border-bottom:0}.relationship-row label{flex:1;font-size:12px}.relationship-row select{padding:6px 8px;min-height:32px;width:120px;font-size:11px;background:#fbfcf8}.relation-help{font-size:10px;color:#899580;line-height:1.8;margin:7px 0}.small-label{font-size:10px;color:#8b9784;font-weight:400}.member-select{display:flex;align-items:center;gap:10px;padding:9px 0;font-size:12px}.member-select input{accent-color:var(--green)}.form-two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.confirm-copy{line-height:1.9;font-size:13px;white-space:pre-line}#toast{position:fixed;bottom:27px;left:calc(50% + 114px);transform:translate(-50%,15px);padding:13px 23px;border-radius:9px;background:#2c4d42;color:#fff;font-size:12px;box-shadow:0 8px 25px #27453825;z-index:100;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;max-width:90vw;text-align:center}#toast.visible{opacity:1;transform:translate(-50%,0)}.hidden{display:none!important}
+@media(min-width:1500px){.content{padding-top:43px}.builder-grid{gap:28px}.card-pad{padding:30px}.candidates{gap:10px}.person-pick{padding:14px}.network{margin-top:22px}.preview-title{margin-top:25px}.preview-bottom{padding:23px 28px 27px}}
+@media(max-width:1150px){.sidebar{width:196px;padding-left:15px;padding-right:15px}.main-wrap{margin-left:196px;width:calc(100% - 196px)}.content{padding:28px}.topbar{padding:0 28px;height:73px}.builder-grid{grid-template-columns:minmax(0,1fr) minmax(280px,.9fr);gap:17px}.card-pad{padding:21px}.field-row{grid-template-columns:1fr 116px}.stat{padding:0 19px;gap:12px}.stat-icon{height:34px;width:34px}.person-row{grid-template-columns:140px 1fr 80px 28px}.person-note{display:none}#toast{left:calc(50% + 98px)}}
+@media(max-width:930px){.sidebar{width:175px;padding-left:10px;padding-right:10px}.main-wrap{margin-left:175px;width:calc(100% - 175px)}.brand{padding:0 10px;gap:10px}.brand-name{font-size:26px}.nav button{padding:12px;font-size:12px}.content{padding:24px}.topbar{padding:0 24px}.builder-grid{grid-template-columns:1fr}.preview-column{display:grid;grid-template-columns:1fr}.preview-card{max-width:none}.network{max-width:330px}.head-art{margin-right:0;width:120px}.page-head h1{font-size:28px}.stat{padding:0 16px;gap:10px}.stat-icon{display:none}.stats{padding:18px 0}.person-row{grid-template-columns:1fr 80px 28px}.person-row>.tags{display:none}.meeting-grid{grid-template-columns:1fr}#toast{left:calc(50% + 87px)}}
+@media(max-width:660px){.layout{display:block}.sidebar{position:static;width:100%;height:auto;padding:19px 20px 0;gap:17px;background:#294d42}.brand{padding:0;gap:10px}.brand-mark{width:30px;height:30px;border-radius:9px}.brand-name{font-size:23px}.brand small{display:none}.brand:after{content:'다정한 모임의 시작';font-size:10px;color:#b7c9ba;margin-left:auto;letter-spacing:.2px}.nav-label,.sidebar-note,.sidebar-bottom{display:none}.nav{display:flex;gap:8px}.nav button{border-radius:8px 8px 0 0;font-size:11px;gap:7px;padding:12px 11px;flex:1;justify-content:center;white-space:nowrap}.nav button.active{background:var(--cream)}.nav button span:last-child:not(:first-child){margin-left:0}.nav svg{width:16px;height:16px}.main-wrap{width:100%;margin:0}.topbar{height:53px;padding:0 20px}.breadcrumb{font-size:10px;gap:8px}.top-actions{gap:12px}.private{display:none}.host-avatar{display:none}.content{padding:22px 18px 35px}.demo-banner{padding:10px 12px;gap:6px;font-size:9px;margin-bottom:25px;flex-wrap:wrap}.demo-banner>svg{width:14px}.demo-banner .text-btn{font-size:9px}.page-head{margin-bottom:23px;gap:8px}.page-head h1{font-size:27px}.page-head p.description{font-size:11px;max-width:240px}.head-art{width:94px;min-width:94px;transform:scale(.78) rotate(-8deg);transform-origin:center right;margin-left:-15px}.stats{margin-bottom:20px;padding:16px 0}.stat{padding:0 14px}.stat small{font-size:9px}.stat b{font-size:20px}.stat b span{font-size:9px}.card-pad{padding:21px 18px}.field-row{grid-template-columns:1fr 122px}.builder-grid{gap:18px}.options{gap:11px}.check-row{font-size:9px}.toolbar{flex-wrap:wrap}.search-wrap{flex-basis:100%}.filter-select{flex:1;max-width:none}.person-row{padding:15px;gap:10px}.person-main{gap:9px}.person-main strong{font-size:12px}.person-main .avatar{width:31px;height:31px}.page-head.compact h1{font-size:25px}.page-head .btn{padding:10px 12px;font-size:11px}.modal-head,.modal-body{padding:20px}.modal-actions{padding:17px 20px}.form-two{grid-template-columns:1fr}.data-row{align-items:flex-start}.data-row .btn{font-size:10px;padding:8px 11px}.relationship-row select{width:105px}#toast{left:50%;font-size:11px;min-width:220px}.preview-header{padding-top:20px}.preview-title{font-size:22px}.network{max-width:335px}.footer-note{font-size:9px}.empty{padding:35px 20px}}
+.ledger-stats{grid-template-columns:1fr 1.3fr 1fr}.total-stat b{font-size:24px;letter-spacing:-.5px}.ledger-explainer{display:flex;align-items:flex-start;gap:8px;color:#8a917e;font-size:11px;line-height:1.8;margin:-7px 0 22px}.ledger-explainer svg{flex-shrink:0;margin-top:2px}.ledger-table{border:1px solid var(--line);background:white;border-radius:11px;overflow:hidden}.ledger-table-head,.ledger-row{display:grid;grid-template-columns:minmax(150px,1.1fr) 110px minmax(120px,1fr) 110px 30px;gap:15px;align-items:center;padding:17px 22px}.ledger-table-head{background:#f1f3ec;color:#87937d;font-size:10px;padding-top:13px;padding-bottom:13px}.ledger-row{border-bottom:1px solid #edf0e7}.ledger-row:last-child{border:0}.ledger-amount{font-size:14px;font-weight:500;font-variant-numeric:tabular-nums}.ledger-amount small{display:block;font-size:9px;color:#9da594;font-weight:400;margin-top:3px}.ledger-amount.unrecorded{font-size:11px;font-weight:400;color:#a0aa96}.ledger-date{font-size:10px;color:#8c9784}.ledger-note{grid-column:1/-1;margin:0 0 0 47px;font-size:10px;color:#a1a68f;line-height:1.8}.ledger-footnote{font-size:10px;line-height:1.8;color:#9aa38e;margin-top:19px}.gift-fields{display:grid;gap:13px;border:1px solid #e7e7da;border-radius:9px;background:#f7f7ee;padding:17px}.gift-section-title{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:500}.gift-fields .relation-help{margin:-4px 0 0}.gift-fields .field textarea{min-height:60px}.gift-fields .field input,.gift-fields .field select{background:#fffefb}.gift-fields .small-label{font-size:9px}
+@media(max-width:1150px){.ledger-table-head,.ledger-row{grid-template-columns:minmax(110px,1fr) 90px 110px 95px 25px;gap:8px;padding-left:17px;padding-right:17px}.ledger-row .avatar{display:none}.ledger-note{margin-left:0}.total-stat b{font-size:21px}.ledger-stats .stat-icon{display:none}}
+@media(max-width:930px){.ledger-table-head{display:none}.ledger-row{grid-template-columns:1fr 100px 26px;gap:9px 14px}.ledger-row .person-main{grid-column:1;grid-row:1}.ledger-amount{grid-column:2;grid-row:1;text-align:right}.ledger-row>.icon-btn{grid-column:3;grid-row:1/3}.ledger-invitation{grid-column:1;grid-row:2}.ledger-date{grid-column:2;grid-row:2;text-align:right}.ledger-note{grid-row:3}}
+@media(max-width:660px){.nav{gap:0}.nav button{flex-direction:column;gap:5px;position:relative;padding:11px 6px;font-size:10px}.nav button span:last-child:not(:first-child){margin:0}.nav button>span:nth-child(3){display:none}.nav svg{width:17px;height:17px}.ledger-stats{grid-template-columns:1fr 1fr;row-gap:16px}.ledger-stats .total-stat{grid-column:1/-1;grid-row:2;border-right:0;border-top:1px solid var(--line);padding-top:16px}.ledger-stats .stat:last-child{border:0}.total-stat b{font-size:22px}.ledger-explainer{font-size:10px}.gift-fields{padding:14px}.ledger-row .avatar{display:inline-grid}.ledger-row{padding:17px 15px}.ledger-row .person-main small{max-width:135px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.gift-fields .form-two{grid-template-columns:1fr}}
+.page-head .btn{flex-shrink:0;white-space:nowrap}.sidebar .nav button>span:nth-child(2){margin-left:0;font-size:13px;opacity:1}.nav button>span:nth-child(3){margin-left:auto}
+@media(max-width:930px){.sidebar .nav button>span:nth-child(2){font-size:12px}}
+@media(max-width:660px){.sidebar .nav button>span:nth-child(2){font-size:10px}}
+.origin-intro{padding:20px 24px;border:1px solid #e1e6d8;background:#edf1e7;border-radius:11px;display:flex;gap:14px;align-items:flex-start;margin-bottom:25px}.origin-intro>svg{color:#7d9573;flex-shrink:0;margin-top:2px}.origin-intro strong{font-size:13px;font-weight:500}.origin-intro p{font-size:11px;line-height:1.9;color:#73836b;margin:7px 0 0}.origin-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.origin-card{padding:21px}.origin-card-top{display:flex;justify-content:space-between;align-items:center}.origin-card h2{font-size:20px;font-weight:500;margin:19px 0 8px;overflow-wrap:anywhere}.origin-card p{font-size:11px;color:#7e8c74;line-height:1.8;margin:0 0 23px;min-height:20px}.origin-card-bottom{padding-top:15px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}.origin-card-bottom .text-btn{font-size:10px}.origin-picker{min-width:0;margin:0;padding:16px;border:1px solid #dfe5d7;border-radius:9px;background:#f7f9f2}.origin-picker legend{padding:0 6px;font-size:12px;font-weight:500}.origin-picker .relation-help{margin:0 0 12px}.origin-choices{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-height:205px;overflow-y:auto;margin:12px 0 0;padding:2px}.origin-choice{display:flex;align-items:center;gap:7px;padding:11px 10px;border:1px solid #e1e6da;background:#fff;border-radius:7px;cursor:pointer;font-size:11px;min-width:0}.origin-choice:has(input:checked){border-color:#8fa883;background:#edf3e7}.origin-choice input{accent-color:var(--green);flex-shrink:0;margin:0}.origin-choice>span{overflow-wrap:anywhere}.origin-choice small{font-size:9px;color:#7e8f72;margin-left:auto;flex-shrink:0}.origin-selected-count{font-size:10px;color:#6d8261;margin:9px 0 15px}.origin-inline-add{display:grid;grid-template-columns:minmax(0,1fr) 110px auto;gap:8px;align-items:end;border-top:1px solid #e1e6da;padding-top:15px}.origin-inline-add input,.origin-inline-add select{padding:10px;font-size:11px}.origin-inline-add .btn{padding:10px 12px}.origin-picker .form-error:empty{display:none}.person-row .person-origins{display:none}
+@media(max-width:1150px){.origin-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:930px){.person-row .person-origins{display:block;max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
+@media(max-width:660px){.nav button{min-width:0;padding-left:3px;padding-right:3px}.origin-grid{grid-template-columns:1fr}.origin-intro{padding:17px}.origin-card{padding:20px}.origin-choices{grid-template-columns:1fr}.origin-inline-add{grid-template-columns:minmax(0,1fr) auto}.origin-inline-add>.field:first-child{grid-column:1/-1}.origin-picker{padding:13px}.origin-card h2{margin-top:13px}.origin-card p{margin-bottom:18px}.origin-choice{font-size:12px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+</style>
+  <script type="module">
+const pairKey = (a, b) => [a, b].sort().join('|');
+const relation = (state, a, b) => state.relations[pairKey(a, b)] || '';
+const assignedIds = state => new Set(state.meetings.flatMap(m => m.members));
+const knownIds = (state, id) => state.people.filter(p => p.id !== id && relation(state, p.id, id) === 'know').map(p => p.id);
+const originTypes = {company:'회사',school:'학교',community:'모임·동호회',other:'기타 인연'};
+const originName = value => String(value).normalize('NFC').trim().replace(/\s+/g,' ');
+const originKey = value => originName(value).toLowerCase();
+const defaultOrigins = () => [
+  {id:'origin-ibm',name:'IBM',type:'company'},
+  {id:'origin-ey',name:'EY한영',type:'company'},
+  {id:'origin-hwagok',name:'화곡고등학교',type:'school'}
+];
+function migrateOrigins(people, saved = defaultOrigins()) {
+  const origins=saved.map(o=>({...o,name:originName(o.name)}));
+  const byName=new Map(origins.map(o=>[originKey(o.name),o]));
+  const ids=new Set(origins.map(o=>o.id));
+  let sequence=0;
+  for(const p of people)for(const name of p.circles){
+    const key=originKey(name);
+    if(!byName.has(key)){
+      while(ids.has(`origin-legacy-${sequence}`))sequence++;
+      const o={id:`origin-legacy-${sequence++}`,name:originName(name),type:'other'};
+      origins.push(o);byName.set(key,o);ids.add(o.id);
+    }
+  }
+  return {origins,people:people.map(p=>({...p,circles:[...new Set(p.circles.map(name=>byName.get(originKey(name)).name))]}))};
+}
+function saveOrigin(state, entry) {
+  const name=originName(entry.name);
+  if(!name||name.length>40)throw new Error('이름은 1~40자로 입력해 주세요.');
+  if(!Object.hasOwn(originTypes,entry.type))throw new Error('알게 된 곳의 종류를 선택해 주세요.');
+  if(!/^[a-zA-Z0-9_-]{1,80}$/.test(entry.id))throw new Error('항목을 다시 열어 주세요.');
+  if(state.origins.some(o=>o.id!==entry.id&&originKey(o.name)===originKey(name)))throw new Error('이미 저장된 이름이에요. 목록에서 선택해 주세요.');
+  const next=structuredClone(state),index=next.origins.findIndex(o=>o.id===entry.id);
+  if(index<0)next.origins.push({id:entry.id,name,type:entry.type});
+  else{
+    const before=next.origins[index].name;
+    next.origins[index]={id:entry.id,name,type:entry.type};
+    next.people=next.people.map(p=>({...p,circles:p.circles.map(c=>c===before?name:c)}));
+  }
+  return next;
+}
+function removeOrigin(state,id) {
+  const origin=state.origins.find(o=>o.id===id);
+  if(!origin)throw new Error('이 항목을 찾을 수 없어요.');
+  if(state.people.some(p=>p.circles.includes(origin.name)))throw new Error('연결된 사람이 있어요. 사람 정보에서 이 항목을 해제한 뒤 삭제해 주세요.');
+  return {...state,origins:state.origins.filter(o=>o.id!==id)};
+}
+function eligiblePeople(state, { includeMaybe = false, includeAssigned = false } = {}) {
+  const assigned = assignedIds(state);
+  return state.people.filter(p => (p.decision === 'invite' || (includeMaybe && p.decision === 'maybe')) && (includeAssigned || !assigned.has(p.id)));
+}
+function candidateInfo(state, id, selected) {
+  const person = state.people.find(p => p.id === id);
+  const peers = selected.filter(pid => pid !== id).map(pid => state.people.find(p => p.id === pid)).filter(Boolean);
+  return {
+    known: peers.filter(p => relation(state, id, p.id) === 'know'),
+    conflicts: peers.filter(p => relation(state, id, p.id) === 'avoid'),
+    circles: [...new Set(peers.flatMap(p => p.circles).filter(c => person?.circles.includes(c)))]
+  };
+}
+// Recommend only people who know at least one selected guest. Explicit separation always wins.
+function recommend(state, anchor, capacity, options = {}) {
+  const pool = eligiblePeople(state, options);
+  if (!pool.some(p => p.id === anchor)) return [];
+  const selected = [anchor];
+  while (selected.length < capacity) {
+    const candidates = pool.filter(p => !selected.includes(p.id)).map(p => ({ p, ...candidateInfo(state, p.id, selected) }))
+      .filter(x => !x.conflicts.length && x.known.length)
+      .sort((a, b) => b.known.length - a.known.length || b.circles.length - a.circles.length || (a.p.decision === 'maybe') - (b.p.decision === 'maybe') || a.p.name.localeCompare(b.p.name, 'ko'));
+    if (!candidates.length) break;
+    selected.push(candidates[0].p.id);
+  }
+  return selected;
+}
+function groupSummary(state, selected) {
+  let links = 0;
+  const conflicts = [];
+  selected.forEach((id, i) => selected.slice(i + 1).forEach(other => {
+    const r = relation(state, id, other);
+    if (r === 'know') links++;
+    if (r === 'avoid') conflicts.push([id, other]);
+  }));
+  return { links, possible: selected.length * (selected.length - 1) / 2, conflicts,
+    isolated: selected.length > 1 ? selected.filter(id => !candidateInfo(state, id, selected).known.length) : [] };
+}
+function validateData(input) {
+  const fail = () => { throw new Error('청모 백업 파일의 형식을 확인해 주세요.'); };
+  const str = (v, n) => typeof v === 'string' && v.length <= n;
+  const idOk = id => typeof id === 'string' && /^[a-zA-Z0-9_-]{1,80}$/.test(id);
+  if (!input || input.version !== 1 || typeof input.demo !== 'boolean' || !Array.isArray(input.people) || input.people.length > 2000 || !Array.isArray(input.meetings) || input.meetings.length > 2000 || !input.relations || typeof input.relations !== 'object' || Array.isArray(input.relations)) fail();
+  const ids = new Set();
+  for (const p of input.people) {
+    if (!p || !idOk(p.id) || ids.has(p.id) || !str(p.name, 50) || !p.name.trim() || !Array.isArray(p.circles) || p.circles.length > 12 || !p.circles.every(c => str(c, 40) && c.trim()) || !['invite','maybe','skip'].includes(p.decision) || !str(p.note, 500)) fail();
+    if (p.invitation !== undefined && !['unknown','yes','no'].includes(p.invitation)) fail();
+    if (p.gift !== undefined && p.gift !== null && (!Number.isSafeInteger(p.gift) || p.gift < 0 || p.gift > 1000000000)) fail();
+    if (p.weddingDate !== undefined && (!str(p.weddingDate, 10) || (p.weddingDate && !/^\d{4}-\d{2}-\d{2}$/.test(p.weddingDate)))) fail();
+    if (p.giftNote !== undefined && !str(p.giftNote, 500)) fail();
+    ids.add(p.id);
+  }
+  for (const [key, value] of Object.entries(input.relations)) {
+    const pair = key.split('|');
+    if (pair.length !== 2 || pair[0] === pair[1] || !pair.every(id => ids.has(id)) || key !== pairKey(...pair) || !['know', 'avoid'].includes(value)) fail();
+  }
+  const meetings = new Set();
+  for (const m of input.meetings) {
+    if (!m || !idOk(m.id) || meetings.has(m.id) || !str(m.title, 80) || !m.title.trim() || !Array.isArray(m.members) || !m.members.length || m.members.length > 12 || !m.members.every(id => ids.has(id)) || new Set(m.members).size !== m.members.length || !str(m.date, 16) || (m.date && !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.test(m.date)) || !str(m.place, 100) || !str(m.note, 500) || !['planned', 'done'].includes(m.status)) fail();
+    meetings.add(m.id);
+  }
+  if(input.origins!==undefined){
+    if(!Array.isArray(input.origins)||input.origins.length>24000)fail();
+    const originIds=new Set(),names=new Set();
+    for(const o of input.origins){
+      if(!o||!idOk(o.id)||originIds.has(o.id)||!str(o.name,40)||!originName(o.name)||!Object.hasOwn(originTypes,o.type)||names.has(originKey(o.name)))fail();
+      originIds.add(o.id);names.add(originKey(o.name));
+    }
+  }
+  // Existing group labels become reusable origins without changing people's other records.
+  const migrated=migrateOrigins(input.people,input.origins);
+  // Rebuild known fields: imported documents never supply UI state or executable content.
+  return { version: 1, demo: input.demo,
+    origins:migrated.origins,
+    people: migrated.people.map(({id,name,circles,decision,note,invitation='unknown',gift=null,weddingDate='',giftNote=''}) => ({id,name,circles,decision,note,invitation,gift,weddingDate,giftNote})),
+    relations: {...input.relations}, meetings: input.meetings.map(({id,title,members,date,place,note,status}) => ({id,title,members:[...members],date,place,note,status})) };
+}
+const emptyData = () => ({ version: 1, demo: false, people: [], origins:defaultOrigins(), relations: {}, meetings: [] });
+function demoData() {
+  const names = [
+    ['민지', ['대학교', '여행 모임'], 'invite', '주말 점심이 편해요.'],
+    ['수빈', ['대학교'], 'invite', '민지, 지훈과 자주 만나는 사이.'],
+    ['지훈', ['대학교', '러닝 크루'], 'invite', '편안한 소규모 모임을 좋아해요.'],
+    ['서연', ['대학교'], 'invite', '수빈과 같이 만나면 좋겠어요.'],
+    ['현우', ['IBM'], 'invite', '퇴근 후 저녁 가능.'],
+    ['유진', ['IBM', '여행 모임'], 'invite', '민지와도 아는 사이.'],
+    ['도윤', ['EY한영', 'IBM'], 'invite', '현우, 유진과 함께 일했던 사이.'],
+    ['하늘', ['러닝 크루'], 'invite', '지훈과 함께 운동해요.'],
+    ['지수', ['화곡고등학교'], 'maybe', '오랜만이라 먼저 안부를 전하고 싶어요.'],
+    ['정우', ['화곡고등학교'], 'maybe', '지수와는 계속 연락하는 사이.'],
+    ['예린', ['여행 모임'], 'invite', '유진과 함께 여행했던 친구.'],
+    ['태호', ['EY한영'], 'skip', '이번에는 따로 소식을 전하려고 해요.']
+  ];
+  const records = {0:['yes',200000,'2024-05-18','결혼식에 참석해서 전달했어요.'],2:['yes',100000,'2025-10-11','계좌로 보냈어요.'],4:['yes',100000,'2025-04-26',''],5:['yes',150000,'2026-03-21',''],8:['yes',100000,'2023-09-16',''],11:['yes',50000,'2022-11-12','']};
+  const people = names.map(([name,circles,decision,note],i) => {
+    const [invitation,gift,weddingDate,giftNote] = records[i] || ['unknown',null,'',''];
+    return {id:`demo${i+1}`,name,circles,decision,note,invitation,gift,weddingDate,giftNote};
+  });
+  const relations = {};
+  [[1,2],[1,3],[1,4],[2,3],[2,4],[3,4],[5,6],[5,7],[6,7],[1,6],[3,8],[9,10],[6,11],[1,11]].forEach(([a,b]) => relations[pairKey(`demo${a}`,`demo${b}`)]='know');
+  relations[pairKey('demo2','demo8')] = 'avoid';
+  return validateData({version:1,demo:true,people,relations,meetings:[],origins:defaultOrigins()});
+}
+
+
+const KEY = 'cheongmo-planner-v1';
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const paths = {
+  people:'M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M16 3a4 4 0 0 1 0 8M22 21v-2a4 4 0 0 0-3-3.87M13 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0',
+  grid:'M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z',
+  calendar:'M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2M8 14h2M14 14h2M8 18h2',
+  heart:'M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8',
+  envelope:'M3 5h18v14H3zM3 5l9 8 9-8',
+  plus:'M12 5v14M5 12h14', check:'M5 12l4 4L19 6', close:'M6 6l12 12M18 6 6 18',
+  arrow:'M5 12h14M14 7l5 5-5 5', chevron:'m9 5 7 7-7 7',
+  spark:'m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z',
+  lock:'M5 10h14v11H5zM8 10V6a4 4 0 0 1 8 0v4M12 15v2',
+  link:'M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l2-2',
+  download:'M12 3v12M7 10l5 5 5-5M4 16v5h16v-5',
+  upload:'M12 16V4M7 9l5-5 5 5M4 16v5h16v-5',
+  settings:'M4 7h16M4 17h16M8 4v6M16 14v6',
+  search:'M21 21l-5-5M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0',
+  edit:'m16 3 5 5-12 12H4v-5zM13 6l5 5',
+  leaf:'M20 3C8 1 1 8 5 16s17 2 15-13M5 20 16 8',
+  info:'M12 11v6M12 7h.01M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0',
+  pin:'M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0M15 10a3 3 0 1 1-6 0 3 3 0 0 1 6 0',
+  coffee:'M4 8h13v9a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM17 8h2a3 3 0 0 1 0 6h-2M7 2v3M12 2v3',
+  gift:'M3 8h18v4H3zM5 12v9h14v-9M12 8v13M12 8H7a3 3 0 1 1 3-3zM12 8h5a3 3 0 1 0-3-3z',
+};
+const icon = (name, size=18) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${paths[name] || paths.heart}"/></svg>`;
+const colors = [['#eadfd4','#a38165'],['#e6e8d9','#8b9372'],['#e0e7e9','#789297'],['#eadfe2','#a78088'],['#e8e1ed','#9983a4'],['#e4e8dc','#86996c']];
+const avatar = (p, cls='') => { const n = [...p.id].reduce((a,c)=>a+c.charCodeAt(0),0) % colors.length; return `<span class="avatar ${cls}" style="--avatar-bg:${colors[n][0]};--avatar-fg:${colors[n][1]}">${esc(p.name.slice(0,1))}</span>`; };
+const decisionLabel = {invite:'꼭 만나기',maybe:'고민 중',skip:'이번엔 보류'};
+const invitationLabel = {unknown:'미기록',yes:'받았어요',no:'받지 않았어요'};
+const won = n => `${new Intl.NumberFormat('ko-KR').format(n)}원`;
+let storageIssue = '', state;
+try { const raw = localStorage.getItem(KEY); state = raw ? validateData(JSON.parse(raw)) : demoData(); }
+catch { state = emptyData(); storageIssue = '저장된 명단을 읽지 못했어요. 기존 데이터는 덮어쓰지 않았습니다. 백업 파일이 있다면 데이터 관리에서 복원해 주세요.'; }
+let protectUnreadable = !!storageIssue;
+const ui = {page:'builder',anchor:'',capacity:4,includeMaybe:false,includeAssigned:false,selected:[],search:'',circle:'all',decision:'all',more:false,meetingFilter:'all',ledgerSearch:'',ledgerFilter:'all',originSearch:'',originType:'all'};
+let toastTimer, modalReturnFocus;
+function initializeDraft(){
+  const pool = eligiblePeople(state,ui);
+  if (!pool.some(p=>p.id===ui.anchor)) ui.anchor = pool[0]?.id || '';
+  ui.selected = recommend(state,ui.anchor,ui.capacity,ui);
+}
+initializeDraft();
+function persist(next){
+  state = next;
+  try {
+    if(protectUnreadable) throw new Error('protected');
+    localStorage.setItem(KEY,JSON.stringify(state));
+    storageIssue='';
+  } catch { storageIssue = '변경 내용이 이 브라우저에 저장되지 않았어요. 창을 닫기 전에 데이터 관리에서 백업 파일을 내려받아 주세요.'; }
+}
+function toast(message){ $('#toast').textContent=message; $('#toast').classList.add('visible'); clearTimeout(toastTimer); toastTimer=setTimeout(()=>$('#toast').classList.remove('visible'),3400); }
+function person(id){return state.people.find(p=>p.id===id);}
+function peopleNames(ids){return ids.map(id=>person(id)?.name||'').join(', ');}
+function assignedCount(){return assignedIds(state).size;}
+function groupTitle(ids){
+  if(!ids.length)return '우리의 다음 모임';
+  const first=person(ids[0]); if(!first)return '우리의 다음 모임';
+  const common=first.circles.find(c=>ids.every(id=>person(id)?.circles.includes(c)));
+  return common ? `${common} 사람들과` : `${first.name} 님과 함께`;
+}
+function render(){
+  const labels={builder:'모임 만들기',people:'사람 목록',origins:'알게 된 곳',meetings:'저장한 모임',ledger:'청첩장·축의금'};
+  $('#app').innerHTML=`<div class="layout">
+    <aside class="sidebar"><div class="brand"><div class="brand-mark">${icon('envelope',24)}</div><div><div class="brand-name">청모</div><small>CHEONGMO</small></div></div>
+    <p class="nav-label">MY WEDDING PLANNER</p><nav class="nav" aria-label="주 메뉴">
+    ${[['builder','grid','모임 만들기',''],['people','people','사람 목록',state.people.length],['origins','pin','알게 된 곳',''],['meetings','calendar','저장한 모임',state.meetings.length],['ledger','gift','청첩장·축의금','']].map(([page,ico,label,count])=>`<button data-action="nav" data-page="${page}" class="${ui.page===page?'active':''}" ${ui.page===page?'aria-current="page"':''}>${icon(ico)}<span>${label}</span>${count!==''?`<span>${count}</span>`:''}</button>`).join('')}</nav>
+    <div class="sidebar-note">${icon('leaf',24)}<p>소중한 사람들과<br>좋은 소식을 나누는 일.</p><small>한 사람씩 떠올리고,<br>다정한 자리를 준비해 보세요.</small></div>
+    <div class="sidebar-bottom"><button data-action="data">${icon('settings',16)}데이터 관리</button></div></aside>
+    <div class="main-wrap"><header class="topbar"><div class="breadcrumb">나의 청첩장 모임 ${icon('chevron',11)} <strong>${labels[ui.page]}</strong></div><div class="top-actions"><span class="private">${icon('lock',12)}나만의 플래너</span><button class="text-btn" data-action="data" aria-label="데이터 관리 및 백업">${icon('download',15)} 백업</button><span class="host-avatar" title="모임을 준비하는 나">나</span></div></header>
+    <main class="content" id="main" tabindex="-1">${storageIssue?`<div class="storage-error" role="alert">${esc(storageIssue)}</div>`:''}
+    ${state.demo?`<div class="demo-banner">${icon('info',15)}<span>지금은 가상의 예시 명단으로 둘러보는 중이에요.</span><button class="text-btn" data-action="start">내 명단 시작하기 ${icon('arrow',13)}</button></div>`:''}
+    ${ui.page==='builder'?builderPage():ui.page==='people'?peoplePage():ui.page==='origins'?originsPage():ui.page==='ledger'?ledgerPage():meetingsPage()}
+    <p class="footer-note">${icon('lock',11)} 명단과 관계는 이 브라우저에만 저장돼요. 다른 기기로 옮기거나 보관하려면 백업을 이용하세요.</p>
+    </main></div></div>`;
+}
+function stats(){return `<div class="stats"><div class="stat"><div class="stat-icon">${icon('people',20)}</div><div><small>만나고 싶은 사람</small><b>${state.people.filter(p=>p.decision==='invite').length}<span>명</span></b></div></div><div class="stat"><div class="stat-icon">${icon('coffee',20)}</div><div><small>모임에 담은 사람</small><b>${assignedCount()}<span>명</span></b></div></div><div class="stat"><div class="stat-icon">${icon('calendar',20)}</div><div><small>저장한 모임</small><b>${state.meetings.length}<span>개</span></b></div></div></div>`;}
+function builderPage(){
+  const pool=eligiblePeople(state,ui), summary=groupSummary(state,ui.selected);
+  const candidates=pool.filter(p=>p.id!==ui.anchor).map(p=>({p,...candidateInfo(state,p.id,ui.selected)})).sort((a,b)=>Number(ui.selected.includes(b.p.id))-Number(ui.selected.includes(a.p.id)) || a.conflicts.length-b.conflicts.length || b.known.length-a.known.length || b.circles.length-a.circles.length);
+  return `<div class="page-head"><div><p class="eyebrow">A LITTLE GATHERING, A BIG MOMENT</p><h1>좋은 소식은,<br><em>편안한 사람들과.</em></h1><p class="description">누구와 함께하면 좋을까요?<br>서로 아는 사이를 연결해, 자연스러운 모임을 만들어 보세요.</p></div><div class="head-art" aria-hidden="true"><div class="letter">FOR YOU</div><div class="envelope"></div><span class="art-spark">✧</span></div></div>
+  ${stats()}
+  ${!state.people.length?`<div class="empty">${icon('people')}<h2>가장 먼저 떠오르는 사람은 누구인가요?</h2><p>만나고 싶은 사람을 적고, 서로 아는 사이를 연결해 주세요.<br>첫 사람이 모이면, 다음 사람을 함께 찾아드릴게요.</p><button class="btn primary" data-action="add-person">${icon('plus',16)}첫 사람 등록하기</button></div>`:`<div class="builder-grid"><section class="card card-pad" aria-labelledby="builder-title"><div class="section-title"><span class="step">01</span><h2 id="builder-title">누구부터 만나볼까요?</h2></div><p class="helper">한 사람을 고르면, 함께 만나기 좋은 사람을 찾아요.</p>
+  <div class="field-row"><div class="field"><label for="anchor">모임의 시작이 될 사람</label><select id="anchor">${pool.length?pool.map(p=>`<option value="${p.id}" ${p.id===ui.anchor?'selected':''}>${esc(p.name)}${p.circles[0]?` · ${esc(p.circles[0])}`:''}</option>`).join(''):'<option value="">추천 가능한 사람이 없어요</option>'}</select></div><div class="field"><label for="capacity">초대 인원 · 나 제외</label><select id="capacity">${[2,3,4,5,6,8,10,12].map(n=>`<option value="${n}" ${ui.capacity===n?'selected':''}>${n}명까지</option>`).join('')}</select></div></div>
+  <div class="options"><label class="check-row"><input id="include-maybe" type="checkbox" ${ui.includeMaybe?'checked':''}>고민 중인 사람도 포함</label><label class="check-row"><input id="include-assigned" type="checkbox" ${ui.includeAssigned?'checked':''}>이미 모임에 담은 사람 포함</label></div>
+  <button class="btn primary full" data-action="recommend" ${!pool.length?'disabled':''}>${icon('spark',15)}서로 아는 사람으로 추천받기</button><hr class="divider">
+  <div class="candidate-heading"><h3>함께 만나면 좋은 사람들</h3><small>직접 더하거나 빼도 좋아요</small></div>
+  <div class="candidates">${candidates.length?candidates.slice(0,ui.more?candidates.length:5).map(c=>candidateCard(c)).join(''):`<p class="helper">${pool.length?'다른 사람을 등록하고 아는 사이를 표시해 주세요.':'사람 목록에서 ‘꼭 만나기’를 선택하거나 위의 포함 옵션을 확인해 주세요.'}</p>`}</div>
+  ${candidates.length>5?`<button class="text-btn more" data-action="more">${ui.more?'접기':`후보 ${candidates.length-5}명 더 보기`} ${icon('chevron',12)}</button>`:''}
+  <button class="text-btn more" data-action="add-person">${icon('plus',12)}사람과 관계 추가하기</button></section>
+  <div class="preview-column"><section class="card preview-card" aria-label="모임 미리보기"><div class="preview-header"><span class="eyebrow"><span class="live-dot"></span> OUR NEXT GATHERING</span><span class="preview-count">${ui.selected.length} / ${ui.capacity}명</span></div><h2 class="preview-title">${esc(groupTitle(ui.selected))}</h2><p class="preview-subtitle">${ui.selected.length>1?'익숙한 얼굴들과 나눌, 반가운 이야기.':ui.selected.length?'함께할 사람을 한 명씩 더해 보세요.':'모임의 시작이 될 사람을 골라 주세요.'}</p>${network()}
+  <div class="connection-note"><span></span>선은 직접 등록한 ‘아는 사이’예요</div>
+  <div class="preview-bottom"><div class="summary-line">${icon('link',16)}${summary.possible?`확인된 아는 사이 ${summary.links} / ${summary.possible}쌍`:'작은 모임도 좋아요'}</div><p class="summary-detail">${summary.possible?summary.links===summary.possible?'선택한 사람들은 모두 서로 아는 사이예요.':summary.isolated.length?`${esc(peopleNames(summary.isolated))} 님은 이 모임에서 확인된 연결이 없어요.`:'모든 사람에게 아는 사람이 한 명 이상 있어요. 서로 모르는 조합은 직접 확인해 주세요.':'한 사람과의 소중한 만남도 모임으로 저장할 수 있어요.'}<br>초대 인원 ${ui.selected.length}명${ui.selected.length?` · 나까지 총 ${ui.selected.length+1}명`:''}</p>
+  ${summary.conflicts.length?'<div class="warning">함께 부르기 어려운 관계가 포함되어 있어요. 구성을 바꿔 주세요.</div>':''}
+  <button class="btn primary full" data-action="save-draft" ${!ui.selected.length||summary.conflicts.length?'disabled':''}>이 조합으로 모임 저장 ${icon('arrow',15)}</button></div></section>
+  <aside class="help-card">${icon('leaf',20)}<div><h3>자연스러운 모임을 위한 작은 팁</h3><p>같은 곳에서 만났어도 모두 아는 사이는 아닐 수 있어요.<br>사람 목록에서 서로의 관계를 표시할수록<br>더 편안한 조합을 찾을 수 있어요.</p></div></aside></div></div>`}`;
+}
+function candidateCard({p,known,conflicts,circles}){
+  const selected=ui.selected.includes(p.id);
+  const reason=conflicts.length?`${peopleNames(conflicts.map(x=>x.id))} 님과 따로 만나기로 했어요`:known.length?`${known.map(x=>x.name).slice(0,2).join(', ')}${known.length>2?` 외 ${known.length-2}명`:''} 님과 아는 사이`:circles.length?`${circles[0]} · 아는 사이인지 확인이 필요해요`:'선택한 사람들과의 관계가 아직 없어요';
+  return `<button class="person-pick ${selected?'selected':''}" data-action="toggle-person" data-id="${p.id}" aria-pressed="${selected}" ${conflicts.length&&!selected?'disabled':''}>${avatar(p)}<span class="pick-copy"><span class="pick-name">${esc(p.name)}${p.circles[0]?`<span class="tag">${esc(p.circles[0])}</span>`:''}${p.decision==='maybe'?'<span class="tag warm">고민 중</span>':''}</span><small>${esc(reason)}</small></span><span class="selection-check">${icon(selected?'check':'plus',11)}</span></button>`;
+}
+function network(){
+  const members=ui.selected.map(person).filter(Boolean), n=members.length;
+  if(!n)return `<div class="network"><div class="network-empty">${icon('envelope',30)}<br>함께할 사람을 기다리고 있어요</div></div>`;
+  const positions=members.map((p,i)=>{const angle=(i/n)*2*Math.PI-Math.PI/2+(n===4?Math.PI/4:0);return {p,x:50+34*Math.cos(angle),y:48+32*Math.sin(angle)};});
+  const lines=[];
+  positions.forEach((a,i)=>positions.slice(i+1).forEach(b=>{if(relation(state,a.p.id,b.p.id)==='know')lines.push(`<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="#a9b899" stroke-width=".4"/>`);}));
+  return `<div class="network"><svg class="links" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="50" cy="48" rx="34" ry="32" fill="none" stroke="#dce2cf" stroke-width=".3" stroke-dasharray="1 2"/>${lines.join('')}</svg><div class="network-center" aria-hidden="true">${icon('envelope',25)}<span>WITH LOVE</span></div>${positions.map(({p,x,y},i)=>`<div class="guest-node" style="left:${x}%;top:${y}%">${avatar(p)}<b>${esc(p.name)}</b>${p.id===ui.anchor?'<small>모임의 시작</small>':''}</div>`).join('')}</div>`;
+}
+function peoplePage(){
+  const circles=state.origins.map(o=>o.name).sort((a,b)=>a.localeCompare(b,'ko'));
+  return `<div class="page-head compact"><div><p class="eyebrow">THE PEOPLE IN YOUR STORY</p><h1>소중한 사람들</h1><p class="description">만나고 싶은 사람, 그리고 서로의 연결을 적어두세요.</p></div><button class="btn primary" data-action="add-person">${icon('plus',15)}사람 추가</button></div>
+  <div class="toolbar"><div class="search-wrap">${icon('search',16)}<input class="search-input" id="people-search" value="${esc(ui.search)}" placeholder="이름, 알게 된 곳, 메모로 검색" aria-label="사람 검색"></div><select class="filter-select" id="circle-filter" aria-label="알게 된 곳 필터"><option value="all">모든 알게 된 곳</option>${circles.map(c=>`<option value="${esc(c)}" ${ui.circle===c?'selected':''}>${esc(c)}</option>`).join('')}</select><select class="filter-select" id="decision-filter" aria-label="초대 결정 필터"><option value="all">모든 초대 상태</option>${Object.entries(decisionLabel).map(([v,l])=>`<option value="${v}" ${ui.decision===v?'selected':''}>${l}</option>`).join('')}</select></div>
+  <div id="people-results">${peopleResults()}</div>`;
+}
+function peopleResults(){
+  const list=state.people.filter(p=>(ui.circle==='all'||p.circles.includes(ui.circle))&&(ui.decision==='all'||p.decision===ui.decision)&&`${p.name} ${p.circles.join(' ')} ${p.note}`.toLowerCase().includes(ui.search.toLowerCase()));
+  const assigned=assignedIds(state);
+  return `<p class="count-muted">${list.length}명의 사람들</p><div class="people-list">${list.length?list.map(p=>`<article class="person-row"><div class="person-main">${avatar(p)}<div><strong>${esc(p.name)}</strong><small class="person-origins">${esc(p.circles.join(' · '))||'알게 된 곳 미지정'}</small><small>아는 사이 ${knownIds(state,p.id).length}명${assigned.has(p.id)?' · 모임에 담김':''}</small></div></div><div class="tags">${p.circles.map(c=>`<span class="tag">${esc(c)}</span>`).join('')}</div><div class="person-note">${esc(p.note)||'아직 남긴 메모가 없어요.'}</div><span class="tag ${p.decision==='invite'?'green':p.decision==='maybe'?'warm':''}">${decisionLabel[p.decision]}</span><button class="icon-btn" data-action="edit-person" data-id="${p.id}" aria-label="${esc(p.name)} 정보와 관계 편집">${icon('edit',16)}</button></article>`).join(''):`<div class="empty">${icon('people')}<h2>${state.people.length?'검색 결과가 없어요':'명단의 첫 페이지를 채워볼까요?'}</h2><p>${state.people.length?'검색어나 필터를 바꿔보세요.':'이름과 알게 된 곳을 적고, 초대하고 싶은 마음을 정리해 보세요.'}</p><button class="btn secondary" data-action="${state.people.length?'clear-filters':'add-person'}">${state.people.length?'검색 초기화':'첫 사람 등록하기'}</button></div>`}</div>`;
+}
+function sortedOrigins(){const kinds=Object.keys(originTypes);return [...state.origins].sort((a,b)=>kinds.indexOf(a.type)-kinds.indexOf(b.type)||a.name.localeCompare(b.name,'ko'));}
+function originsPage(){
+  return `<div class="page-head compact"><div><p class="eyebrow">WHERE OUR STORIES BEGAN</p><h1>우리가 알게 된 곳</h1><p class="description">함께 일했던 회사, 다녔던 학교, 즐겨 찾던 모임.<br>구체적인 이름으로 저장하고 사람들에게 연결해 주세요.</p></div><button class="btn primary" data-action="add-origin">${icon('plus',15)}새 항목 추가</button></div>
+  <div class="origin-intro">${icon('pin',22)}<div><strong>한 번 저장해 두면, 다음에는 선택만.</strong><p>IBM과 EY한영은 각각 다른 인연으로 관리해요. 한 사람에게 여러 곳을 연결할 수도 있어요.</p></div></div>
+  <div class="toolbar"><div class="search-wrap">${icon('search',16)}<input class="search-input" id="origin-search" value="${esc(ui.originSearch)}" placeholder="회사·학교·모임 이름 검색" aria-label="알게 된 곳 검색"></div><select class="filter-select" id="origin-type-filter" aria-label="알게 된 곳 종류 필터"><option value="all">모든 종류</option>${Object.entries(originTypes).map(([v,l])=>`<option value="${v}" ${ui.originType===v?'selected':''}>${l}</option>`).join('')}</select></div><div id="origin-results">${originResults()}</div>`;
+}
+function originResults(){
+  const list=sortedOrigins().filter(o=>originKey(o.name).includes(originKey(ui.originSearch))&&(ui.originType==='all'||o.type===ui.originType));
+  return `<p class="count-muted">${list.length}개의 인연 · 이름을 바꾸면 연결된 사람에게도 함께 반영돼요.</p>${list.length?`<div class="origin-grid">${list.map(o=>{const members=state.people.filter(p=>p.circles.includes(o.name));return `<article class="card origin-card"><div class="origin-card-top"><span class="tag ${o.type==='company'?'green':o.type==='school'?'warm':''}">${originTypes[o.type]}</span><button class="icon-btn" data-action="edit-origin" data-id="${o.id}" aria-label="${esc(o.name)} 이름과 종류 수정">${icon('edit',16)}</button></div><h2>${esc(o.name)}</h2><p>${members.length?`${members.slice(0,3).map(p=>esc(p.name)).join(', ')}${members.length>3?` 외 ${members.length-3}명`:''}`:'아직 연결된 사람이 없어요.'}</p><div class="origin-card-bottom"><button class="text-btn" data-action="origin-people" data-id="${o.id}">연결된 사람 ${members.length}명 ${icon('arrow',12)}</button><button class="text-btn" data-action="origin-add-person" data-id="${o.id}">${icon('plus',12)}사람 추가</button></div></article>`;}).join('')}</div>`:`<div class="empty">${icon('pin')}<h2>새로운 인연의 시작을 적어보세요</h2><p>회사·학교의 이름이나 알게 된 계기를 자유롭게 저장할 수 있어요.</p><button class="btn secondary" data-action="add-origin">알게 된 곳 추가</button></div>`}`;
+}
+function originModal(id){
+  const existing=state.origins.find(o=>o.id===id),o=existing||{name:'',type:'company'};
+  const count=existing?state.people.filter(p=>p.circles.includes(o.name)).length:0;
+  openModal(existing?'알게 된 곳 수정':'알게 된 곳 추가',`<form id="origin-form"><div class="modal-body"><p class="helper">구체적인 이름을 적어 주세요. 여기 저장한 항목은 사람을 등록할 때 다시 선택할 수 있어요.</p><div class="modal-fields"><div class="field"><label for="origin-name">이름 *</label><input id="origin-name" name="name" value="${esc(o.name)}" maxlength="40" placeholder="예: IBM, EY한영, 화곡고등학교" required autofocus></div><div class="field"><label for="origin-type">어떤 인연인가요?</label><select id="origin-type" name="type">${Object.entries(originTypes).map(([v,l])=>`<option value="${v}" ${o.type===v?'selected':''}>${l}</option>`).join('')}</select></div>${count?`<p class="helper">이름을 바꾸면 연결된 ${count}명의 정보도 함께 바뀝니다.<br>삭제하려면 먼저 연결된 사람들의 선택을 해제해 주세요.</p>`:''}</div><div id="form-error" class="form-error" role="alert"></div></div><div class="modal-actions">${existing?`<button type="button" class="text-btn left" data-action="delete-origin" data-id="${id}" ${count?'disabled':''}>항목 삭제</button>`:''}<button type="button" class="btn secondary" data-action="close-modal">취소</button><button type="submit" class="btn primary">항목 저장</button></div></form>`);
+  $('#origin-form').onsubmit=e=>{e.preventDefault();try{const fd=new FormData(e.currentTarget),next=saveOrigin(state,{id:id||crypto.randomUUID(),name:fd.get('name'),type:fd.get('type')});if(existing&&ui.circle===existing.name)ui.circle=originName(fd.get('name'));persist(next);closeModal();render();toast('알게 된 곳을 저장했어요.');}catch(err){$('#form-error').textContent=err.message;}};
+}
+function originChoices(selected){
+  return sortedOrigins().map(o=>`<label class="origin-choice" data-origin-choice="${esc(originKey(o.name))}"><input type="checkbox" name="circles" value="${esc(o.name)}" ${selected.includes(o.name)?'checked':''}><span>${esc(o.name)}</span><small>${originTypes[o.type]}</small></label>`).join('')||'<p class="helper">아래에서 첫 번째 항목을 추가해 주세요.</p>';
+}
+function originPicker(selected){
+  return `<fieldset class="origin-picker"><legend>알게 된 곳 <span class="small-label">· 여러 개 선택</span></legend><p class="relation-help">저장해 둔 회사·학교·모임을 골라 주세요. 목록에 없으면 바로 추가할 수 있어요.</p><div class="field"><input id="origin-choice-search" aria-label="저장한 인연 검색" placeholder="저장한 이름으로 찾기"></div><div id="origin-choices" class="origin-choices">${originChoices(selected)}</div><p class="origin-selected-count" id="origin-selected-count">${selected.length}개 선택</p><div class="origin-inline-add"><div class="field"><label for="new-origin-name">목록에 새 이름 추가</label><input id="new-origin-name" maxlength="40" placeholder="예: IBM, EY한영, 화곡고등학교"></div><div class="field"><label for="new-origin-type">종류</label><select id="new-origin-type">${Object.entries(originTypes).map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select></div><button type="button" class="btn secondary" data-action="inline-add-origin">추가</button></div><div id="origin-inline-error" class="form-error" role="alert"></div></fieldset>`;
+}
+function inlineAddOrigin(){
+  const name=originName($('#new-origin-name').value),selected=new FormData($('#person-form')).getAll('circles');
+  $('#origin-inline-error').textContent='';
+  if(!name){$('#origin-inline-error').textContent='추가할 이름을 입력해 주세요.';return;}
+  try{
+    const existing=state.origins.find(o=>originKey(o.name)===originKey(name));
+    const chosen=existing?.name||name;
+    if(!selected.includes(chosen)&&selected.length>=12)throw new Error('한 사람에게는 최대 12개까지 선택할 수 있어요.');
+    if(!existing)persist(saveOrigin(state,{id:crypto.randomUUID(),name,type:$('#new-origin-type').value}));
+    if(!selected.includes(chosen))selected.push(chosen);
+    $('#origin-choices').innerHTML=originChoices(selected);$('#origin-choice-search').value='';$('#new-origin-name').value='';$('#origin-selected-count').textContent=`${selected.length}개 선택`;
+    render();toast(existing?'이미 저장된 항목을 선택했어요.':'목록에 저장하고 선택했어요.');
+  }catch(err){$('#origin-inline-error').textContent=err.message;}
+}
+function dateLabel(value){if(!value)return '날짜를 정해 주세요';const d=new Date(`${value}:00+09:00`);return Number.isNaN(d.getTime())?'날짜 확인 필요':new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',month:'long',day:'numeric',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:true}).format(d);}
+function ledgerPage(){
+  const total=state.people.reduce((sum,p)=>sum+(p.gift??0),0),recorded=state.people.filter(p=>p.gift!==null&&p.gift!==undefined).length;
+  return `<div class="page-head compact"><div><p class="eyebrow">A NOTE OF THE MOMENTS WE SHARED</p><h1>청첩장과 축의금</h1><p class="description">받았던 초대와 전했던 마음을, 잊지 않도록 적어두세요.</p></div><button class="btn secondary" data-action="add-person">${icon('plus',15)}사람 추가</button></div><div class="stats ledger-stats"><div class="stat"><div class="stat-icon">${icon('envelope',20)}</div><div><small>청첩장을 받은 사람</small><b>${state.people.filter(p=>p.invitation==='yes').length}<span>명</span></b></div></div><div class="stat total-stat"><div class="stat-icon">${icon('gift',20)}</div><div><small>내가 낸 축의금 합계</small><b>${won(total)}</b></div></div><div class="stat"><div class="stat-icon">${icon('edit',20)}</div><div><small>금액을 기록한 사람</small><b>${recorded}<span>/ ${state.people.length}명</span></b></div></div></div>
+  <div class="ledger-explainer">${icon('info',15)}<span>내가 상대에게 낸 금액을 기록하는 곳이에요. 빈칸은 ‘미기록’, 0원은 ‘내지 않음’으로 구분해요.</span></div><div class="toolbar"><div class="search-wrap">${icon('search',16)}<input id="ledger-search" class="search-input" value="${esc(ui.ledgerSearch)}" placeholder="이름, 알게 된 곳, 축의금 메모로 검색" aria-label="청첩장 및 축의금 기록 검색"></div><select id="ledger-filter" class="filter-select" aria-label="청첩장 및 축의금 필터">${[['all','모든 기록'],['yes','청첩장 받음'],['no','청첩장 받지 않음'],['unknown','청첩장 미기록'],['gift-missing','축의금 미기록']].map(([v,l])=>`<option value="${v}" ${ui.ledgerFilter===v?'selected':''}>${l}</option>`).join('')}</select></div><div id="ledger-results">${ledgerResults()}</div><p class="ledger-footnote">기록은 모임 추천 순위에 영향을 주지 않아요. 사람별 편집 화면에서도 함께 관리할 수 있습니다.</p>`;
+}
+function ledgerResults(){
+  const list=state.people.filter(p=>`${p.name} ${p.circles.join(' ')} ${p.giftNote||''}`.toLowerCase().includes(ui.ledgerSearch.toLowerCase())&&(ui.ledgerFilter==='all'||(ui.ledgerFilter==='gift-missing'?p.gift===null||p.gift===undefined:(p.invitation||'unknown')===ui.ledgerFilter)));
+  if(!list.length)return `<div class="empty">${icon('gift')}<h2>${state.people.length?'해당하는 기록이 없어요':'기억하고 싶은 초대가 있나요?'}</h2><p>${state.people.length?'다른 이름이나 필터로 찾아보세요.':'먼저 사람을 추가하고, 받은 청첩장과 낸 축의금을 기록해 보세요.'}</p><button class="btn secondary" data-action="${state.people.length?'clear-ledger':'add-person'}">${state.people.length?'검색 초기화':'사람 추가하기'}</button></div>`;
+  return `<p class="count-muted">${list.length}명의 기록 · 금액은 원(KRW) 기준</p><div class="ledger-table"><div class="ledger-table-head"><span>사람</span><span>받은 청첩장</span><span>내가 낸 축의금</span><span>상대 결혼식</span><span></span></div>${list.map(p=>`<article class="ledger-row"><div class="person-main">${avatar(p)}<div><strong>${esc(p.name)}</strong><small>${esc(p.circles.join(' · '))||'알게 된 곳 미지정'}</small></div></div><div class="ledger-invitation"><span class="tag ${p.invitation==='yes'?'green':''}">${invitationLabel[p.invitation||'unknown']}</span></div><div class="ledger-amount ${p.gift===null||p.gift===undefined?'unrecorded':''}">${p.gift===null||p.gift===undefined?'미기록':won(p.gift)}${p.gift===0?'<small>내지 않음</small>':''}</div><div class="ledger-date">${p.weddingDate?esc(p.weddingDate.replaceAll('-','. ')):'날짜 미기록'}</div><button class="icon-btn" data-action="edit-gift" data-id="${p.id}" aria-label="${esc(p.name)} 청첩장 및 축의금 기록">${icon('edit',16)}</button>${p.giftNote?`<p class="ledger-note">${esc(p.giftNote)}</p>`:''}</article>`).join('')}</div>`;
+}
+function giftFields(p){
+  return `<div class="gift-fields"><div class="gift-section-title">${icon('gift',15)}청첩장과 축의금 <span class="small-label">· 선택 기록</span></div><div class="form-two"><div class="field"><label for="person-invitation">이 사람에게 청첩장을 받았나요?</label><select id="person-invitation" name="invitation">${Object.entries(invitationLabel).map(([v,l])=>`<option value="${v}" ${(p.invitation||'unknown')===v?'selected':''}>${l}</option>`).join('')}</select></div><div class="field"><label for="person-gift">내가 낸 축의금 <span class="small-label">· 원</span></label><input id="person-gift" name="gift" type="number" inputmode="numeric" min="0" max="1000000000" step="1" value="${p.gift??''}" placeholder="미기록 · 예: 100000"></div></div><p class="relation-help">아직 기록하지 않았다면 빈칸으로, 내지 않았다면 0으로 남겨주세요.</p><div class="field"><label for="person-wedding-date">상대 결혼식 날짜</label><input id="person-wedding-date" name="weddingDate" type="date" value="${esc(p.weddingDate||'')}" max="9999-12-31"></div><div class="field"><label for="person-gift-note">청첩장·축의금 메모</label><textarea id="person-gift-note" name="giftNote" maxlength="500" placeholder="예: 결혼식에 참석해 전달 / 계좌로 송금">${esc(p.giftNote||'')}</textarea></div></div>`;
+}
+function giftRecord(fd){
+  const raw=String(fd.get('gift')??'').trim(),gift=raw===''?null:Number(raw);
+  if(gift!==null&&(!Number.isSafeInteger(gift)||gift<0||gift>1000000000))throw new Error('축의금은 0원부터 10억 원까지, 원 단위 정수로 입력해 주세요.');
+  return {invitation:fd.get('invitation')||'unknown',gift,weddingDate:String(fd.get('weddingDate')||''),giftNote:String(fd.get('giftNote')||'').trim()};
+}
+function giftModal(id){
+  const p=person(id);if(!p)return;
+  openModal(`${p.name} 님의 청첩장·축의금`,`<form id="gift-form"><div class="modal-body"><p class="helper">이 사람에게 받은 청첩장과, 내가 낸 축의금을 기록해요.</p>${giftFields(p)}<div id="form-error" class="form-error" role="alert"></div></div><div class="modal-actions"><button type="button" class="btn secondary" data-action="close-modal">취소</button><button type="submit" class="btn primary">기록 저장</button></div></form>`);
+  $('#gift-form').onsubmit=e=>{e.preventDefault();try{const record=giftRecord(new FormData(e.currentTarget)),next=structuredClone(state);Object.assign(next.people.find(x=>x.id===id),record);persist(next);closeModal();render();toast('청첩장과 축의금 기록을 저장했어요.');}catch(err){$('#form-error').textContent=err.message;}};
+}
+function meetingsPage(){
+  const list=state.meetings.filter(m=>ui.meetingFilter==='all'||m.status===ui.meetingFilter).sort((a,b)=>(a.date||'9999').localeCompare(b.date||'9999'));
+  return `<div class="page-head compact"><div><p class="eyebrow">LITTLE MOMENTS TO LOOK FORWARD TO</p><h1>우리의 약속들</h1><p class="description">조합을 담아두고, 날짜와 장소를 천천히 정해요.</p></div><button class="btn primary" data-action="nav" data-page="builder">${icon('plus',15)}모임 만들기</button></div><div class="meeting-filter">${[['all','전체'],['planned','만날 예정'],['done','만남 완료']].map(([v,l])=>`<button class="${ui.meetingFilter===v?'active':''}" data-action="meeting-filter" data-filter="${v}" aria-pressed="${ui.meetingFilter===v}">${l} ${state.meetings.filter(m=>v==='all'||m.status===v).length}</button>`).join('')}</div>
+  ${list.length?`<div class="meeting-grid">${list.map(m=>{const summary=groupSummary(state,m.members);return `<article class="card meeting-card ${m.status==='done'?'meeting-done':''}"><div class="meeting-top"><span class="tag ${m.status==='done'?'green':'warm'}">${m.status==='done'?'만남 완료':m.date?'만날 예정':'일정 미정'}</span><button class="icon-btn" data-action="edit-meeting" data-id="${m.id}" aria-label="${esc(m.title)} 편집">${icon('edit',16)}</button></div><h2>${esc(m.title)}</h2><p class="meeting-meta">${icon('calendar',14)}${esc(dateLabel(m.date))}</p><p class="meeting-meta">${icon('pin',14)}${esc(m.place)||'장소를 정해 주세요'}</p><div class="meeting-members">${m.members.map(id=>`<span class="member-chip">${esc(person(id)?.name)}</span>`).join('')}<span class="member-chip">나</span></div>${summary.conflicts.length?'<div class="warning">따로 만나기로 한 관계가 포함되어 있어요. 구성을 확인해 주세요.</div>':''}${m.note?`<p class="helper" style="margin-bottom:15px">${esc(m.note)}</p>`:''}<div class="meeting-actions"><button class="text-btn" data-action="copy-meeting" data-id="${m.id}">${icon('envelope',13)}안내문 복사</button><button class="btn small ${m.status==='done'?'secondary':'soft'}" data-action="toggle-done" data-id="${m.id}">${icon('check',13)}${m.status==='done'?'예정으로 되돌리기':'만남 완료'}</button></div></article>`;}).join('')}</div>`:`<div class="empty">${icon('calendar')}<h2>${state.meetings.length?'이 상태의 모임이 아직 없어요':'첫 번째 모임을 기다리고 있어요'}</h2><p>편안한 조합을 찾았다면 모임으로 저장해 보세요.<br>날짜와 장소는 나중에 정해도 괜찮아요.</p><button class="btn primary" data-action="nav" data-page="builder">모임 만들러 가기 ${icon('arrow',14)}</button></div>`}`;
+}
+function openModal(title,body,actions=''){
+  const modal=$('#modal');
+  if(!modal.open)modalReturnFocus=document.activeElement;
+  modal.innerHTML=`<div class="modal-head"><h2 id="modal-title">${esc(title)}</h2><button class="icon-btn" data-action="close-modal" aria-label="닫기">${icon('close',20)}</button></div>${body}${actions}`;
+  if(!modal.open)modal.showModal();
+}
+function closeModal(){ $('#modal').close(); if(modalReturnFocus?.isConnected)modalReturnFocus.focus(); }
+function confirmDialog(title,copy,label,fn,danger=false){
+  openModal(title,`<div class="modal-body"><p class="confirm-copy">${esc(copy)}</p></div>`,`<div class="modal-actions"><button class="btn secondary" data-action="close-modal">취소</button><button class="btn ${danger?'danger':'primary'}" id="confirm-action">${esc(label)}</button></div>`);
+  $('#confirm-action').onclick=()=>{closeModal();fn();};
+}
+function personModal(id,preselected=[]){
+  const existing=id?person(id):null;
+  const p=existing||{name:'',circles:preselected,decision:'invite',note:''};
+  const others=state.people.filter(x=>x.id!==id);
+  openModal(existing?'사람과 관계 편집':'새로운 사람 추가',`<form id="person-form"><div class="modal-body"><p class="helper">서로 아는 사이를 표시하면 자연스러운 모임을 추천해 드려요.</p><div class="modal-fields"><div class="form-two"><div class="field"><label for="person-name">이름 *</label><input id="person-name" name="name" value="${esc(p.name)}" maxlength="50" required placeholder="이름 또는 별명" autofocus></div><div class="field"><label for="person-decision">초대에 대한 마음</label><select id="person-decision" name="decision">${Object.entries(decisionLabel).map(([v,l])=>`<option value="${v}" ${p.decision===v?'selected':''}>${l}</option>`).join('')}</select></div></div>${originPicker(p.circles)}<div class="field"><label for="person-note">기억해 둘 이야기</label><textarea id="person-note" name="note" maxlength="500" placeholder="초대를 고민하는 이유나, 함께 만나면 좋을 사람 등">${esc(p.note)}</textarea></div>
+  ${giftFields(p)}
+  ${others.length?`<div class="field"><label for="relation-search">이 사람과 다른 사람들의 관계</label><p class="relation-help">‘아는 사이’는 서로 아는 관계, ‘따로 만나기’는 같은 모임에서 제외할 관계예요. 양쪽에 함께 반영됩니다.</p><input id="relation-search" placeholder="관계를 설정할 사람 검색" aria-label="관계 목록 검색"><div class="relationship-list">${others.map(o=>`<div class="relationship-row" data-relation-name="${esc(o.name.toLowerCase())}">${avatar(o)}<label for="rel-${o.id}">${esc(o.name)}</label><select id="rel-${o.id}" name="rel-${o.id}">${[['','미확인'],['know','아는 사이'],['avoid','따로 만나기']].map(([v,l])=>`<option value="${v}" ${relation(state,id,o.id)===v?'selected':''}>${l}</option>`).join('')}</select></div>`).join('')}</div></div>`:'<p class="helper">다음 사람을 추가할 때 서로의 관계를 연결할 수 있어요.</p>'}
+  </div><div id="form-error" class="form-error" role="alert"></div></div><div class="modal-actions">${existing?`<button type="button" class="text-btn left" data-action="delete-person" data-id="${id}">이 사람 삭제</button>`:''}<button type="button" class="btn secondary" data-action="close-modal">취소</button><button class="btn primary" type="submit">${existing?'변경 저장':'명단에 추가'}</button></div></form>`);
+  $('#person-form').onsubmit=e=>{
+    e.preventDefault();const fd=new FormData(e.currentTarget), name=String(fd.get('name')).trim();
+    if(!name){$('#form-error').textContent='이름을 입력해 주세요.';return;}
+    if($('#new-origin-name').value.trim()){$('#form-error').textContent='입력 중인 새 이름의 ‘추가’를 눌러 선택하거나, 입력란을 비워 주세요.';$('#new-origin-name').focus();return;}
+    const circles=[...new Set(fd.getAll('circles'))];
+    if(circles.length>12||circles.some(c=>!state.origins.some(o=>o.name===c))){$('#form-error').textContent='알게 된 곳은 목록에서 최대 12개까지 선택해 주세요.';return;}
+    let record;try{record=giftRecord(fd);}catch(err){$('#form-error').textContent=err.message;return;}
+    const pid=id||crypto.randomUUID(), next=structuredClone(state);
+    const entry={id:pid,name,circles,decision:fd.get('decision'),note:String(fd.get('note')).trim(),...record};
+    if(existing)next.people[next.people.findIndex(x=>x.id===id)]=entry;else next.people.push(entry);
+    others.forEach(o=>{const key=pairKey(pid,o.id), val=fd.get(`rel-${o.id}`);if(val)next.relations[key]=val;else delete next.relations[key];});
+    persist(next);initializeDraft();closeModal();render();toast(existing?'사람과 관계를 저장했어요.':'소중한 사람을 명단에 추가했어요.');
+  };
+  $('#relation-search')?.addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('[data-relation-name]').forEach(row=>row.classList.toggle('hidden',!row.dataset.relationName.includes(q)));});
+}
+function meetingModal(id){
+  const existing=id?state.meetings.find(m=>m.id===id):null;
+  const m=existing||{title:groupTitle(ui.selected),members:[...ui.selected],date:'',place:'',note:'',status:'planned'};
+  openModal(existing?'모임의 약속 정리':'이 조합으로 모임 저장',`<form id="meeting-form"><div class="modal-body"><p class="helper">날짜와 장소는 비워두어도 좋아요. 정해지면 언제든 수정할 수 있어요.</p><div class="modal-fields"><div class="field"><label for="meeting-title">모임 이름 *</label><input id="meeting-title" name="title" value="${esc(m.title)}" maxlength="80" required autofocus></div><div class="form-two"><div class="field"><label for="meeting-date">날짜와 시간 <span class="small-label">· 한국 시간</span></label><input id="meeting-date" name="date" type="datetime-local" value="${esc(m.date)}"></div><div class="field"><label for="meeting-place">장소</label><input id="meeting-place" name="place" value="${esc(m.place)}" maxlength="100" placeholder="예: 성수역 근처 식당"></div></div><div class="field"><label for="meeting-note">모임 메모</label><textarea id="meeting-note" name="note" maxlength="500" placeholder="예약할 때 챙길 점, 전하고 싶은 이야기">${esc(m.note)}</textarea></div><div><div class="field-label">함께할 사람 <span class="small-label">· 나를 제외한 초대 인원, 최대 12명</span></div><div class="relationship-list">${state.people.filter(p=>p.decision!=='skip'||m.members.includes(p.id)).map(p=>`<label class="member-select"><input type="checkbox" name="members" value="${p.id}" ${m.members.includes(p.id)?'checked':''}>${avatar(p)}${esc(p.name)}${p.decision!=='invite'?`<span class="tag warm">${decisionLabel[p.decision]}</span>`:''}</label>`).join('')}</div></div></div><div id="meeting-advice"></div><div id="form-error" class="form-error" role="alert"></div></div><div class="modal-actions">${existing?`<button type="button" class="text-btn left" data-action="delete-meeting" data-id="${id}">모임 삭제</button>`:''}<button type="button" class="btn secondary" data-action="close-modal">취소</button><button type="submit" class="btn primary">모임 저장</button></div></form>`);
+  const advice=()=>{const ids=new FormData($('#meeting-form')).getAll('members'),s=groupSummary(state,ids);$('#meeting-advice').innerHTML=s.isolated.length?`<div class="warning">${esc(peopleNames(s.isolated))} 님은 이 모임에서 확인된 아는 사이가 없어요. 함께 만나도 괜찮을지 확인해 주세요.</div>`:'';};
+  $('#meeting-form').addEventListener('change',advice);advice();
+  $('#meeting-form').onsubmit=e=>{
+    e.preventDefault();const fd=new FormData(e.currentTarget),title=String(fd.get('title')).trim(),members=fd.getAll('members'),summary=groupSummary(state,members);
+    if(!title||!members.length||members.length>12){$('#form-error').textContent='모임 이름과 1~12명의 초대 인원을 선택해 주세요.';return;}
+    if(summary.conflicts.length){$('#form-error').textContent=`${summary.conflicts.map(pair=>peopleNames(pair)).join(' / ')} 님은 따로 만나기로 한 관계예요. 한 사람을 빼거나 사람 목록에서 관계를 변경해 주세요.`;return;}
+    const next=structuredClone(state), entry={id:id||crypto.randomUUID(),title,members,date:String(fd.get('date')),place:String(fd.get('place')).trim(),note:String(fd.get('note')).trim(),status:m.status};
+    if(existing)next.meetings[next.meetings.findIndex(x=>x.id===id)]=entry;else next.meetings.push(entry);
+    persist(next);initializeDraft();ui.page='meetings';ui.meetingFilter='all';closeModal();render();toast('모임을 저장했어요.');
+  };
+}
+function dataModal(){
+  openModal('나의 명단과 백업',`<div class="modal-body"><p class="helper">명단은 현재 브라우저에 저장됩니다. 다른 브라우저·기기와 자동으로 동기화되지 않으며, 브라우저 데이터를 지우면 사라질 수 있어요.</p><div class="data-row"><div><h3>내 데이터 백업</h3><p>사람 ${state.people.length}명 · 관계 ${Object.keys(state.relations).length}개 · 모임 ${state.meetings.length}개<br>알게 된 곳 ${state.origins.length}개와 축의금·관계 기록을 함께 저장해요.</p></div><button class="btn secondary small" data-action="export">${icon('download',14)}내려받기</button></div><div class="data-row"><div><h3>백업에서 복원</h3><p>선택한 백업 파일로 현재 명단 전체를 바꿉니다.</p></div><button class="btn secondary small" data-action="import">${icon('upload',14)}불러오기</button></div><div class="data-row"><div><h3>${state.demo?'내 명단 시작하기':'예시로 둘러보기'}</h3><p>${state.demo?'가상의 예시 명단을 비우고 새로 시작해요.':'현재 명단을 예시로 바꿉니다. 먼저 백업해 주세요.'}</p></div><button class="btn secondary small" data-action="${state.demo?'start':'load-demo'}">${state.demo?'새로 시작':'예시 보기'}</button></div></div>`,`<div class="modal-actions"><button class="btn primary" data-action="close-modal">확인</button></div>`);
+}
+function exportData(){
+  const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download=`청모-${state.demo?'예시-':''}백업-${new Date().toISOString().slice(0,10)}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('백업 파일을 내려받았어요.');
+}
+function startOwn(){confirmDialog('나만의 명단을 시작할까요?','예시 사람과 모임을 비우고, 내 사람들을 등록합니다. 저장해 둔 ‘알게 된 곳’ 목록은 유지해요.\n예시에서 바꾼 내용을 남기려면 먼저 백업해 주세요.','내 명단 시작',()=>{protectUnreadable=false;persist({...emptyData(),origins:state.origins});ui.page='people';ui.search='';ui.circle='all';ui.decision='all';initializeDraft();render();personModal();});}
+async function copyMeeting(id){
+  const m=state.meetings.find(x=>x.id===id);if(!m)return;
+  const text=`[${m.title}]\n좋은 소식을 직접 전하고 싶어서 작은 자리를 준비했어요. 편하게 만나서 이야기 나눠요!\n\n함께할 사람: ${peopleNames(m.members)}, 나\n일시: ${m.date?dateLabel(m.date):'함께 정해요'}\n장소: ${m.place||'함께 정해요'}`;
+  try{await navigator.clipboard.writeText(text);toast('안내문을 복사했어요. 원하는 곳에 직접 붙여넣어 주세요.');}
+  catch{openModal('모임 안내문',`<div class="modal-body"><p class="helper">아래 문장을 선택해 복사해 주세요. 개인 메모와 관계 정보는 포함하지 않았어요.</p><div class="field"><textarea rows="9" readonly id="copy-text" aria-label="복사할 모임 안내문">${esc(text)}</textarea></div></div>`,`<div class="modal-actions"><button class="btn primary" data-action="close-modal">닫기</button></div>`);$('#copy-text').select();}
+}
+document.addEventListener('click',e=>{
+  const el=e.target.closest('[data-action]');if(!el||el.disabled)return;
+  const action=el.dataset.action,id=el.dataset.id;
+  if(action==='nav'){ui.page=el.dataset.page;render();window.scrollTo({top:0});}
+  else if(action==='recommend'){initializeDraft();render();toast(ui.selected.length<ui.capacity?'확인된 아는 사이만 연결했어요. 관계를 더 등록하면 조합이 넓어져요.':'서로 아는 사람들로 조합했어요.');}
+  else if(action==='toggle-person'){
+    if(ui.selected.includes(id))ui.selected=ui.selected.filter(x=>x!==id);
+    else{if(ui.selected.length>=ui.capacity){toast('초대 인원을 늘리거나 한 사람을 빼 주세요.');return;}if(candidateInfo(state,id,ui.selected).conflicts.length)return;ui.selected.push(id);}
+    render();
+  }
+  else if(action==='more'){ui.more=!ui.more;render();}
+  else if(action==='add-origin')originModal();
+  else if(action==='edit-origin')originModal(id);
+  else if(action==='inline-add-origin')inlineAddOrigin();
+  else if(action==='origin-people'){const o=state.origins.find(o=>o.id===id);ui.page='people';ui.circle=o.name;ui.search='';ui.decision='all';render();window.scrollTo({top:0});}
+  else if(action==='origin-add-person'){const o=state.origins.find(o=>o.id===id);personModal(undefined,[o.name]);}
+  else if(action==='delete-origin'){
+    const o=state.origins.find(o=>o.id===id);if(!o)return;
+    confirmDialog('이 항목을 삭제할까요?',`${o.name} 항목을 선택 목록에서 삭제합니다. 연결된 사람이 없는 항목만 삭제할 수 있어요.`,'항목 삭제',()=>{try{persist(removeOrigin(state,id));if(ui.circle===o.name)ui.circle='all';render();toast('선택 목록에서 삭제했어요.');}catch(err){toast(err.message);}},true);
+  }
+  else if(action==='add-person')personModal();
+  else if(action==='edit-person')personModal(id);
+  else if(action==='edit-gift')giftModal(id);
+  else if(action==='save-draft'){if(ui.selected.length)meetingModal();}
+  else if(action==='edit-meeting')meetingModal(id);
+  else if(action==='close-modal')closeModal();
+  else if(action==='data')dataModal();
+  else if(action==='start')startOwn();
+  else if(action==='export')exportData();
+  else if(action==='import')$('#import-file').click();
+  else if(action==='load-demo')confirmDialog('예시 명단으로 바꿀까요?','현재 명단과 모임이 예시 데이터로 교체돼요. 내 데이터를 보관하려면 먼저 백업을 내려받아 주세요.','예시로 바꾸기',()=>{protectUnreadable=false;persist(demoData());ui.page='builder';initializeDraft();render();});
+  else if(action==='clear-filters'){ui.search='';ui.circle='all';ui.decision='all';render();}
+  else if(action==='clear-ledger'){ui.ledgerSearch='';ui.ledgerFilter='all';render();}
+  else if(action==='meeting-filter'){ui.meetingFilter=el.dataset.filter;render();}
+  else if(action==='toggle-done'){const next=structuredClone(state),m=next.meetings.find(m=>m.id===id);m.status=m.status==='done'?'planned':'done';persist(next);render();toast(m.status==='done'?'반가운 만남으로 기록했어요.':'만날 예정으로 변경했어요.');}
+  else if(action==='copy-meeting')void copyMeeting(id);
+  else if(action==='delete-meeting')confirmDialog('이 모임을 삭제할까요?','모임만 삭제되며, 사람과 관계 정보는 명단에 남습니다.','모임 삭제',()=>{const next=structuredClone(state);next.meetings=next.meetings.filter(m=>m.id!==id);persist(next);initializeDraft();render();toast('모임을 삭제했어요.');},true);
+  else if(action==='delete-person'){
+    const p=person(id),affected=state.meetings.filter(m=>m.members.includes(id));
+    confirmDialog(`${p.name} 님을 삭제할까요?`,`명단과 이 사람의 관계 정보가 삭제됩니다.${affected.length?`\n참여 중인 모임 ${affected.length}개에서도 빠지며, 인원이 없어지는 모임은 함께 삭제돼요.`:''}`,'사람 삭제',()=>{const next=structuredClone(state);next.people=next.people.filter(p=>p.id!==id);Object.keys(next.relations).forEach(key=>{if(key.split('|').includes(id))delete next.relations[key];});next.meetings=next.meetings.map(m=>({...m,members:m.members.filter(x=>x!==id)})).filter(m=>m.members.length);persist(next);initializeDraft();render();toast('명단에서 삭제했어요.');},true);
+  }
+});
+document.addEventListener('change',e=>{
+  const id=e.target.id;
+  if(['anchor','capacity','include-maybe','include-assigned'].includes(id)){
+    if(id==='anchor')ui.anchor=e.target.value;
+    if(id==='capacity')ui.capacity=Number(e.target.value);
+    if(id==='include-maybe')ui.includeMaybe=e.target.checked;
+    if(id==='include-assigned')ui.includeAssigned=e.target.checked;
+    initializeDraft();render();
+  }
+  if(id==='circle-filter'||id==='decision-filter'){ui[id==='circle-filter'?'circle':'decision']=e.target.value;$('#people-results').innerHTML=peopleResults();}
+  if(id==='ledger-filter'){ui.ledgerFilter=e.target.value;$('#ledger-results').innerHTML=ledgerResults();}
+  if(id==='origin-type-filter'){ui.originType=e.target.value;$('#origin-results').innerHTML=originResults();}
+  if(e.target.name==='circles'){
+    const selected=new FormData($('#person-form')).getAll('circles');
+    if(selected.length>12){e.target.checked=false;toast('한 사람에게는 최대 12개까지 선택할 수 있어요.');}
+    $('#origin-selected-count').textContent=`${Math.min(selected.length,12)}개 선택`;
+  }
+});
+document.addEventListener('input',e=>{
+  if(e.target.id==='people-search'){ui.search=e.target.value;$('#people-results').innerHTML=peopleResults();}
+  if(e.target.id==='ledger-search'){ui.ledgerSearch=e.target.value;$('#ledger-results').innerHTML=ledgerResults();}
+  if(e.target.id==='origin-search'){ui.originSearch=e.target.value;$('#origin-results').innerHTML=originResults();}
+  if(e.target.id==='origin-choice-search'){const q=originKey(e.target.value);document.querySelectorAll('[data-origin-choice]').forEach(label=>label.classList.toggle('hidden',!label.dataset.originChoice.includes(q)));}
+});
+document.addEventListener('keydown',e=>{if(e.target.id==='new-origin-name'&&e.key==='Enter'&&!e.isComposing){e.preventDefault();inlineAddOrigin();}});
+$('#import-file').addEventListener('change',async e=>{
+  const file=e.target.files[0];e.target.value='';if(!file)return;
+  try{
+    if(file.size>5_000_000)throw new Error('백업 파일은 5MB 이내로 선택해 주세요.');
+    const next=validateData(JSON.parse(await file.text()));
+    confirmDialog('백업 파일로 복원할까요?',`현재 명단을 ${next.demo?'예시 ':''}사람 ${next.people.length}명, 모임 ${next.meetings.length}개의 백업으로 바꿉니다.\n현재 내용을 보관하려면 취소하고 먼저 백업해 주세요.`,'백업 복원',()=>{protectUnreadable=false;persist(next);ui.search='';ui.circle='all';ui.decision='all';ui.page='people';initializeDraft();render();toast('백업에서 명단을 복원했어요.');});
+  }catch(err){toast(err instanceof SyntaxError?'올바른 JSON 백업 파일이 아니에요. 현재 데이터는 그대로 유지돼요.':err.message);}
+});
+// Prevent silent overwrites when the same planner is open in another tab.
+window.addEventListener('storage',e=>{if(e.key!==KEY)return;try{state=e.newValue?validateData(JSON.parse(e.newValue)):emptyData();protectUnreadable=false;storageIssue='';closeModal();initializeDraft();render();toast('다른 탭의 변경 내용을 반영했어요.');}catch{storageIssue='다른 탭의 변경 내용을 읽지 못했어요. 현재 명단을 백업해 주세요.';protectUnreadable=true;render();}});
+render();
+
+</script>
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+  <div id="app"></div>
+  <dialog id="modal" aria-labelledby="modal-title"></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <input id="import-file" type="file" accept="application/json,.json" hidden>
+  <noscript>청모를 사용하려면 브라우저의 자바스크립트를 켜 주세요.</noscript>
+</body>
+</html>

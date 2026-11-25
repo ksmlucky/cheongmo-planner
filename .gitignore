@@ -1,0 +1,22 @@
+# Private/local state is never part of the public source repository.
+.env
+.env.*
+!.env.example
+**/.openai/
+**/.sites-runtime/
+node_modules/
+work/
+outputs/
+backups/
+*backup*.json
+*백업*.json
+*.log
+*.pem
+*.key
+.DS_Store
+Thumbs.db
+NVIDIA Corporation/
+
+# Earlier local review captures; the README uses a clean example preview.
+/청모-미리보기.jpg
+/청모-알게된곳.jpg
